@@ -17,6 +17,7 @@ public class Solution {
             return null;
         }
         TreeNode root = new TreeNode(pre[0]);
+        if (N == 1) return root;
 
         int L = 0;
         for (int i = 0; i < N; i++) {
