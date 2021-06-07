@@ -23,4 +23,12 @@ public class Solution {
         }
         return dp[length - 1];
     }
+
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        int[] nums = {4,1,2,5};
+        System.out.println(solution.rob(nums));
+
+    }
 }
