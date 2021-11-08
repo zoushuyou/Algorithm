@@ -70,6 +70,32 @@ public class Solution {
         listNode.next.next.next = new ListNode(5);
         listNode.next.next.next.next = new ListNode(9);
         Solution solution = new Solution();
-        solution.sortedListToBST(listNode);
+        TreeNode node =solution.sortedListToBST2(listNode);
+    }
+
+    ListNode cur = null;
+
+    public TreeNode sortedListToBST2(ListNode head){
+        cur = head;
+        int end = 0;
+        while (head != null){
+            end++;
+            head = head.next;
+        }
+        return sortedArrayToBSTHelper(0,end);
+    }
+
+    private TreeNode sortedArrayToBSTHelper(int start, int end) {
+        if (start == end){
+            return null;
+        }
+        int mid = (start + end) >>> 1;
+        TreeNode left = sortedArrayToBSTHelper(start, mid);
+        TreeNode root = new TreeNode(cur.val);
+        root.left = left;
+        cur = cur.next;
+        TreeNode right = sortedArrayToBSTHelper(mid+1,end);
+        root.right =right;
+        return root;
     }
 }
