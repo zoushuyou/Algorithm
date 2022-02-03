@@ -2,6 +2,7 @@ package nowcoder.zsy.NC140;
 
 public class Solution {
 
+    //冒泡排序
     public int[] MySort (int[] arr) {
         if (arr.length == 1 || arr.length == 0){
             return arr;
