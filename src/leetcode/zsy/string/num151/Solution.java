@@ -11,18 +11,29 @@ import java.util.List;
  * @date 2021-11-19 13:48
  */
 public class Solution {
-    public String reverseWords(String s){
-/*        String[] s1 = s.split("\\s+");
-        StringBuilder res = new StringBuilder();
-        for (int i = s1.length -1; i>=0; i--){
-            res =res.append(" ").append( s1[i]);
-        }
-        return res.toString().trim();*/
-        s = s.trim();
-        List<String> list = Arrays.asList(s.split("\\s+"));
-        Collections.reverse(list);
-        return String.join(" ",list);
+//    public String reverseWords(String s){
+///*        String[] s1 = s.split("\\s+");
+//        StringBuilder res = new StringBuilder();
+//        for (int i = s1.length -1; i>=0; i--){
+//            res =res.append(" ").append( s1[i]);
+//        }
+//        return res.toString().trim();*/
+//        s = s.trim();
+//        List<String> list = Arrays.asList(s.split("\\s+"));
+//        Collections.reverse(list);
+//        return String.join(" ",list);
+//
+//    }
 
+    public String reverseWords(String s) {
+        String[] arr = s.split(" ");
+        String res = "";
+        for(int i=arr.length - 1; i>=0; i--){
+            if(arr[i] != ""){
+                res = res + " " + arr[i];
+            }
+        }
+        return res.substring(1,res.length());
     }
 
     public static void main(String[] args) {
